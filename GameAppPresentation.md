@@ -1,0 +1,117 @@
+Developing Data Products: Shiny Video Game Review Analysis
+========================================================
+author: Tony Matera
+date: November 5, 2016
+width: 1200
+height: 770
+transition: concave
+transition-speed: slow
+id: titleSlide
+<img src="sidekicks/video-games.png" align="right" title='"Thou shalt jump on the heads of thine enemies and destroy them, only to find thy princess resides in another castle." -Toad 3:16' style="background-color:transparent; border:0px; box-shadow:none; margin-right:100px; margin-top:-100px; float:right;">
+
+
+
+IGN Video Game Reviews
+========================================================
+type: section
+left: 60%
+
+<font size="5">For years, <a href="http://www.ign.com/" target="_blank" title="IGN? More like... bye...pee...then..... Amirite?">IGN</a> has been reviewing video games and used to be a trusted source for whether a video game was worth buying. However, they have been scrutinized for possibly becoming biased over the years, perhaps being incentivized to give certain games greater scores than otherwise deserved.
+
+This Shiny-based app allows users to begin to look for hard evidence of biased reviews based on <a href="https://www.dropbox.com/s/09sh15zbtwg9eu3/gamedata.xlsx" target="_blank" title="Shhh... This message is a SECRET!">this data</a>, which consists of all game review scores scraped from the IGN website by Reddit user <a href="https://www.reddit.com/r/datasets/comments/2awdgx/i_made_this_dataset_of_all_of_igns_game_reviews/" target="_blank" title="How many links did this guy put in here anyway??">/u/CDanger</a>.</font>
+
+***
+
+<font size="5">The data consists of four fields:
+- <strong><span style="color:#00FFFB">Game</span></strong> - the name of the video game
+- <strong><span style="color:#00FF1F">Platform</span></strong> - the gaming system upon which the game was reviewed
+- <strong><span style="color:#FFFC00">Score</span></strong> - IGN's game review score
+- <strong><span style="color:#7500D6">Genre</span></strong> - genre of the game
+
+To preserve simplicity within the app, the data used includes only the most popular gaming systems of the past twenty years.</font>
+
+Game Review Counts Summary
+========================================================
+type: prompt
+
+The following counts are generated from the data used to build the app. We have displayed the number of reviews per platform and per genre.
+
+<font size="5">
+
+
+```r
+source("sidekicks/global.R")
+table(gameData$Platform)
+```
+
+```
+
+     GameCube   Nintendo 64            PC   PlayStation PlayStation 2 
+          509           301          3026           952          1683 
+PlayStation 3 PlayStation 4           Wii         Wii U          Xbox 
+         1295            47          1347            78           822 
+     Xbox 360      Xbox One 
+         1582            35 
+```
+
+```r
+table(gameData$MainGenre)
+```
+
+```
+
+      Action        Adult    Adventure     Baseball       Battle 
+        3091            1          701            1           22 
+       Board         Card       Casino  Compilation  Educational 
+          58           72           10           41           20 
+    Fighting       Flight      Hunting        Music         None 
+         449          139           90          307           12 
+       Other        Party      Pinball   Platformer Productivity 
+          14           88           39          458            4 
+      Puzzle       Racing          RPG      Shooter   Simulation 
+         395         1018          583         1195          321 
+      Sports     Strategy       Trivia  Virtual Pet    Wrestling 
+        1530          821           75           28           94 
+```
+
+</font>
+
+
+App Layout and Instructions
+========================================================
+type: sub-section
+left: 55%
+
+<br>Here is a screenshot of what you see when you first open the application:
+<img src="sidekicks/screenshot.png" width=600 height=452 align="left" style="margin-top:30px" title="Isn't this thing the coolest?! ... Wait... Even the pictures have messages?!?!">
+
+***
+
+<br><br><br>
+<font size="5">
+- Filter by <strong><span style="color:#02AF17">Platform</span></strong> and/or by <strong><span style="color:#7500D6">Genre</span></strong> by checking/unchecking the appropriate boxes.
+- Click the <strong><span style="color:#EEA200">All/Random</span></strong> buttons to select all platforms/genres (if not all are selected) or select a random one (if all are selected)
+- Filters also apply to the <strong><span style="color:#C10606">Data Table</span></strong> to reference which games are showing up after filtering
+- Below each plot is a summary of scores by <strong><span style="color:#02AF17">Platform</span></strong>/<strong><span style="color:#7500D6">Genre</span></strong>
+
+</font>
+
+
+Final Notes
+========================================================
+
+<font size="6">
+The <strong><em><span style="color:#EEA200">IGN Video Game Review Shiny App</span></em></strong> can be found <strong><a href="https://tonymatera.shinyapps.io/IGN-VGReview-Analysis/" target="_blank" title="ATTENTION: IF YOU CAN READ THIS, YOU DON'T NEED GLASSES.">here</a></strong>.
+</font>
+
+<font size="5">Intended Future Updates:
+- Add release/review dates to video games
+- Add time series plots to see review trends over time
+- Incorporate more pictures and <strong><em><span style="color:#06D485">pretty things</span></em></strong>
+
+</font>
+
+<div align="center">Now go out there and have fun with our app!<br>
+<img src="sidekicks/vaultboy.png" width=250 height=248 title="Long time ago, me and my brother Kyle here, we was hitchhikin' down a long and lonesome road..." style="background-color:transparent; border:0px; box-shadow:none; margin-bottom:-50px"></div>
+
+<h6 align="right"><small><small><small><small><a href="#/titleSlide" title="Energize!">Again! Again!</a></small></small></small></small></h6>
