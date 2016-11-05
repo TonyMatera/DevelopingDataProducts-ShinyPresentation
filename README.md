@@ -11,6 +11,8 @@ This presentation provides a summary and instructions for the **IGN Video Game R
 - App Layout & Instructions
 - Final Notes
 
+The presentation can be found **[here](https://tonymatera.github.io/DevelopingDataProducts-ShinyPresentation/)**.
+
 ### Application
 
 The **IGN Video Game Review Analysis** Shiny application was created to analyze IGN's video game reviews to see if they are biased based on platform and/or genre. The user may filter by platform and genre in the sidebar, which results in updated plots and review score data summaries in the main panel. The main panel consists of *three* tabs:
@@ -18,3 +20,5 @@ The **IGN Video Game Review Analysis** Shiny application was created to analyze 
 - **Platforms** - Scores are plotted by Platform. Data summary per Platform is below.
 - **Genres** - Scores are plotted by Genre. Data summary per Genre is below.
 - **Data** - Data table consisting of all filtered games. User can sort by any field or search for specific games/platforms/scores/genres.
+
+The application can be found **[here](https://tonymatera.shinyapps.io/IGN-VGReview-Analysis/)**.
